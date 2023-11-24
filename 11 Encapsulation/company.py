@@ -5,8 +5,8 @@ from contact import Contact
 
 class Company:
     def __init__(self, name, address, phone, email, employees):
-        self.name = name
-        self.contact = Contact(address, phone, email)
+        self._name = name
+        self._contact = Contact(address, phone, email)
         self._employees = employees
         self._reports = [
             SalaryReport(self._employees),
@@ -15,8 +15,8 @@ class Company:
         ]
 
     def show_company_info(self):
-        print(f"Company: {self.name}")
-        print(f"Contact: {self.contact.get_contact_info()}")
+        print(f"Company: {self._name} ({len(self._employees)} employees)")
+        print(f"Contact: {self._contact.get_contact_info()}")
 
         for r in self._reports:
             print()

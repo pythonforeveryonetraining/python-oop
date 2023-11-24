@@ -15,7 +15,7 @@ class Company:
         ]
 
     def show_company_info(self):
-        print(f"Company: {self.name}")
+        print(f"Company: {self.name} ({len(self.employees)} employees)")
         print(f"Contact: {self.address}, {self.phone}")
 
         for r in self.reports:
